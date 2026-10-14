@@ -1,0 +1,35 @@
+{
+  "description": "Block access to websites and only allow access for a certain amount of time.",
+  "manifest_version": 3,
+  "name": "Clock Block",
+  "version": "1.0",
+  "homepage_url": "https://github.com/DISCRUTER/clock-block",
+  "icons": "icons/clock-block-48.png",
+  "permissions": [],
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "clock-block@discruter.com",
+      "data_collection_permissions": {
+        "required": ["none"]
+      }
+    }
+  },
+  "action": {
+    "default_icon": "icons/clock-block-32.png",
+    "theme_icons": [
+      {
+        "light": "icons/clock-block-light-32.png",
+        "dark": "icons/clock-block-32.png",
+        "size": 32
+      }
+    ],
+    "default_title": "Clock Block",
+    "default_popup": "popup/index.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://*/*"],
+      "js": ["inspector.js"]
+    }
+  ]
+}
